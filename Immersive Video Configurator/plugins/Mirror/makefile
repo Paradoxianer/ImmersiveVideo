@@ -7,7 +7,7 @@
 ## Application Specific Settings ---------------------------------------------
 
 # specify the name of the binary
-NAME= DDDPlugin
+NAME= MirrorPlugin
 
 # specify the type of binary
 #	APP:	Application
@@ -24,12 +24,11 @@ TYPE= SHARED
 #	if two source files with the same name (source.c or source.cpp)
 #	are included from different directories.  Also note that spaces
 #	in folder names do not work well with this makefile.
-SRCS=  	DDDPlugin.cpp \
-		DDD.cpp \
+SRCS=  	Mirror.cpp 
 		
 #	specify the resource files to use
 #	full path or a relative path to the resource file can be used.
-RSRCS=  DDD.rscr
+RSRCS=  Mirror.rscr
 
 #	specify additional libraries to link against
 #	there are two acceptable forms of library specifications
@@ -59,7 +58,7 @@ SYSTEM_INCLUDE_PATHS =
 #	additional paths to look for local headers
 #	thes use the form: #include "header"
 #	source file directories are automatically included
-LOCAL_INCLUDE_PATHS =  ..\  ..\..\
+LOCAL_INCLUDE_PATHS =  ..  ../..
 
 #	specify the level of optimization that you desire
 #	NONE, SOME, FULL
@@ -102,4 +101,3 @@ include $(DEVEL_DIRECTORY)/etc/makefile-engine
 default .DEFAULT:
 	mkdir -p ../../../$(APP_DIR)/$(PLUGIN_DIR)
 	cp -rf  $(OBJ_DIR)/$(NAME) ../../../$(APP_DIR)/$(PLUGIN_DIR)
-
